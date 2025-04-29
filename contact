@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Contact Me!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="contactForm" action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
+        <p>
+           <label for="first">Full Name:</label>
+           <input type="text" id="first" name="first" placeholder="Enter first name" required>
+        </p>
+
+        <p>
+           <label for="emailAddr">Email:</label>
+           <input type="email" name="emailAddr" id="emailAddr" placeholder="Enter email address" required>
+        </p>
+        <p>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+        </p>
+
+        <p>
+            <button type="reset">Cancel</button>
+            <button type="submit">Submit</button>  
+        </p>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2025 Swetha Nair</p>
+    </footer>
+</body>
+</html>
