@@ -1,0 +1,88 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: #4CAF50;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#darkModeToggle {
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+.profile-pic {
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode nav a {
+    color: #ddd;
+}
+
+.dark-mode .download-btn {
+    background: #666;
+}
