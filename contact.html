@@ -6,44 +6,148 @@
     <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Contact Me!</h1>
         <nav>
-            <a href="swethan_portfolio.html">Home</a>
+            <a href="swethan_portfolio.html">Home</a> &nbsp;
             <a href="workexp.html">Work Experience</a> &nbsp;
             <a href="projects.html">Projects/Certifications</a> &nbsp;
             <a href="dance.html">Dance</a> &nbsp;
-            <button id="darkModeToggle">Dark Mode</button>
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkModeCheckbox">
+                <label for="darkModeCheckbox" class="switch-label">
+                    <span class="switch-icon sun">☀️</span>
+                    <span class="switch-icon moon">🌙</span>
+                    <span class="switch-ball"></span>
+                </label>
+            </div>
         </nav>
     </header>
 
     <main>
-        <form id="contactForm" action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
-        <p>
-           <label for="first">Full Name:</label>
-           <input type="text" id="first" name="first" placeholder="Enter first name" required>
-        </p>
+        <div class="contact-form-wrapper">
+            <form id="contactForm" novalidate>
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter full name" required />
+              <span class="error-message" id="nameError"></span>
+          
+              <label for="emailAddr">Email:</label>
+              <input type="email" id="emailAddr" name="emailAddr" placeholder="Enter email address" required />
+              <span class="error-message" id="emailError"></span>
+          
+              <label for="message">Message:</label>
+              <textarea id="message" required></textarea>
+              <span class="error-message" id="messageError"></span>
+          
+              <div class="form-buttons">
+                <button type="reset" class="cancel-btn">Cancel</button>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+          
 
-        <p>
-           <label for="emailAddr">Email:</label>
-           <input type="email" name="emailAddr" id="emailAddr" placeholder="Enter email address" required>
-        </p>
-        <p>
-            <label for="message">Message:</label>
-            <textarea id="message" required></textarea>
-        </p>
-
-        <p>
-            <button type="reset">Cancel</button>
-            <button type="submit">Submit</button>  
-        </p>
-
-        </form>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("contactForm");
+            const name = document.getElementById("name");
+            const email = document.getElementById("emailAddr");
+            const message = document.getElementById("message");
+        
+            const nameError = document.getElementById("nameError");
+            const emailError = document.getElementById("emailError");
+            const messageError = document.getElementById("messageError");
+        
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+                let valid = true;
+        
+                // Validate name
+                if (name.value.trim() === "") {
+                    name.classList.add("invalid");
+                    nameError.textContent = "Please enter your name.";
+                    nameError.style.display = "block";
+                    valid = false;
+                } else {
+                    name.classList.remove("invalid");
+                    nameError.style.display = "none";
+                }
+        
+                // Validate email
+                if (!email.value.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+                    email.classList.add("invalid");
+                    emailError.textContent = "Enter a valid email address.";
+                    emailError.style.display = "block";
+                    valid = false;
+                } else {
+                    email.classList.remove("invalid");
+                    emailError.style.display = "none";
+                }
+        
+                // Validate message
+                if (message.value.trim() === "") {
+                    message.classList.add("invalid");
+                    messageError.textContent = "Please enter a message.";
+                    messageError.style.display = "block";
+                    valid = false;
+                } else {
+                    message.classList.remove("invalid");
+                    messageError.style.display = "none";
+                }
+        
+                if (!valid) return;
+        
+                // If valid, send the form
+                const data = {
+                    name: name.value,
+                    email: email.value,
+                    message: message.value
+                };
+        
+                try {
+                    const response = await fetch('http://localhost:3000/submit-form', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+        
+                    const result = await response.json();
+                    if (result.success) {
+                        alert("Message sent successfully!");
+                        form.reset();
+                    } else {
+                        alert("Oops! Something went wrong.");
+                    }
+                } catch (error) {
+                    console.error("Error submitting form:", error);
+                    alert("Server error. Please try again later.");
+                }
+            });
+        
+            // Clear validation errors on reset
+            form.addEventListener("reset", () => {
+                name.classList.remove("invalid");
+                email.classList.remove("invalid");
+                message.classList.remove("invalid");
+                nameError.style.display = "none";
+                emailError.style.display = "none";
+                messageError.style.display = "none";
+            });
+        });
+        </script>
 
     <footer>
+        <p>Contact: <a href="mailto:swethanair@gmail.com">swethanair@gmail.com</a> | Phone: (408) 768-6835</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/swetha-nair-081199293" target="_blank">LinkedIn</a> |
+                <a href="https://www.youtube.com/@SNAPChoreography" target="_blank">SNAP YouTube</a> |
+                <a href="https://community.cob.sjsu.edu/snair/" target="_blank">PRO Point MIS Portfolio</a>
+            </div>
         <p>© 2025 Swetha Nair</p>
     </footer>
 </body>

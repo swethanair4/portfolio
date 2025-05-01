@@ -6,19 +6,33 @@
     <title>Work Experience - Swetha Nair</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Work Experience</h1>
         <nav>
+            <div class="dropdown">
+                <a href="#work" class="dropbtn">Work Experience<i class="fa-solid fa-caret-down"></i></a> &nbsp;
+                <div class="dropdown-content">
+                    <a href="#work">Work Experience</a>
+                    <a href="#vol">Volunteer Experience</a>
+                    <a href="#act">Activities</a>
+                </div>
+            </div>
             <a href="swethan_portfolio.html">Home</a> &nbsp;
-            <a href=#work>Work Experience</a> &nbsp;
-            <a href=#vol>Volunteer Experience</a> &nbsp;
-            <a href=#act>Activities</a> &nbsp;
             <a href="projects.html">Projects/Certifications</a> &nbsp;
             <a href="dance.html">Dance</a> &nbsp;
             <a href="contact.html">Contact Me!</a> 
-            <button id="darkModeToggle">Dark Mode</button>
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkModeCheckbox">
+                <label for="darkModeCheckbox" class="switch-label">
+                    <span class="switch-icon sun">☀️</span>
+                    <span class="switch-icon moon">🌙</span>
+                    <span class="switch-ball"></span>
+                </label>
+            </div>
         </nav>
     </header>
     
@@ -26,10 +40,10 @@
         <section id="work">
             <h2>Work Experience</h2>
 
-             <div class="work-item">
+            <div class="work-item">
                 <h3>Dance Instructor - School of Indian Dance</h3>
                 <p>October 2024 - <i>Current</i></p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Detail-oriented and personalized feedback to mentor and enhance student's understanding of the connections within their body and proper form for Bharatanatyam dance</li>
                     <li>Conducted four classes weekly with 15-30 students each age group 5-14 years old and maintained management and leadership while teaching diligence</li>
@@ -40,7 +54,7 @@
             <div class="work-item">
                 <h3>Keyholder/Salesperson - Daniel's Jewelers</h3>
                 <p>February 2021 - September 2021</p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Promoted to Keyholder within 2 months of employment and offered Manager position due to detail-oriented and quick adoption on execution of duties including intricate opening & closing procedures, floated to provide coverage at other storefronts, possible with great adaptability and initiative (different merchandise and set-ups)</li>
                     <li>Created and guided customers through credit accounts with in-store credit lines and Synchrony, Sunbit, lease-to-owns, and other accounts; multiple step process with faxing, calling, negotiating.</li>
@@ -51,7 +65,7 @@
             <div class="work-item">
                 <h3>Salesperson/Cashier - Bath & Body Works</h3>
                 <p>September 2020 - February 2021</p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Achieved top salesperson consistently: highest numbers for check-out add-ons, holiday box set sales, conversion rates, and email sign ups because adaptable to diverse customer needs </li>
                     <li>Assisted customers with finding the perfect scents for them and gifts and increased store sales/conversion. Provided high quality customer service while still being efficient with sales and handling large influx of customers, up to 500 in a shift. Managed inventory of store products and streamlined restocking the store</li>
@@ -61,7 +75,7 @@
             <div class="work-item">
                 <h3>Day Care/Camp Instructor - Safari Kid</h3>
                 <p>January 2018 - February 2019 (Seasonal)</p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Supervised and educated children age 5-9 (up to 45 at a time), required high patience, communication skills, and empathy</li>
                     <li>Recruited as dance teacher, asked to be full-time instructor teaching: math, english, workouts, science, basketball, crafts and take on a leadership role due communication and adaptability</li>
@@ -72,10 +86,10 @@
         <section id="vol">
             <h2>Volunteer Experience</h2>
 
-             <div class="vol-item">
+            <div class="vol-item">
                 <h3>PRO Community Ambassador- SJSU Management Information Systems Department</h3>
                 <p>November 2023 - <i>Current</i></p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Coordinated emails with related parties and answered up to 20 emailed questions a week with a same-day response rate.</li>
                     <li>Recruited users by empowering fellow colleagues to create and update professional portfolios that set them up for career success</li>
@@ -86,7 +100,7 @@
             <div class="vol-item">
                 <h3>Dance Team Captain/Manager - SJSU Sahaara (Desi Dance Network)</h3>
                 <p>August 2021 - August 2024</p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Choreographed and trained team in collaborative effort for school’s competitive team in national Bollywood-fusion circuit that most colleges in nation participate in; perfected competition application training process with 100% acceptance rate for first time. demonstrated leadership and team player skills </li>
                     <li>Coordinated professionally with external DJs, competition coordinators, and school club sports management and resources and provided consistent motivation to team throughout and organized travel accommodations for team of 21-23 college students cross-country (Texas, North/South Carolina, and California: LA, SF, San Diego)</li>
@@ -96,7 +110,7 @@
             <div class="vol-item">
                 <h3>Radio Jocky and Service Volunteer - ThankGoshIt'sFresh Radio/PRAGNYA</h3>
                 <p>March 2017 - August 2019</p>
-                <p>Responsibilities:</p>
+                <p><b>Responsibilities:</b></p>
                 <ul>
                     <li>Conducted research to write and execute weekly talk shows demonstrating clear communication skills, initiative, and reliability throughout balancing a full plate of school </li>
                     <li>Supported children with autism through one-on-one pairing and acculturation sessions with patience and understanding</li>
@@ -117,6 +131,12 @@
     </main>
 
     <footer>
+        <p>Contact: <a href="mailto:swethanair@gmail.com">swethanair@gmail.com</a> | Phone: (408) 768-6835</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/swetha-nair-081199293" target="_blank">LinkedIn</a> |
+            <a href="https://www.youtube.com/@SNAPChoreography" target="_blank">SNAP YouTube</a> |
+            <a href="https://community.cob.sjsu.edu/snair/" target="_blank">PRO Point MIS Portfolio</a>
+        </div>
         <p>© 2025 Swetha Nair</p>
     </footer>
 </body>

@@ -1,88 +1,672 @@
-/* Basic Reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
     padding: 20px;
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s, color 0.3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
 header {
-    background: #4CAF50;
-    padding: 15px;
+    background-color: #2c3e50;
+    padding: 20px;
     text-align: center;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Navigation with hover */
 nav {
     margin-top: 10px;
 }
 
 nav a {
-    color: white;
-    margin: 0 10px;
+    color: #ecf0f1;
     text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-#darkModeToggle {
-    margin-top: 10px;
-    padding: 5px 10px;
+nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #f39c12;
+    width: 0%;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
 }
 
+nav a:hover {
+    color: #f39c12;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-weight: bold;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+.dropbtn i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+/* rotate on hover */
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: #f39c12;
+}
+
+
+
+/* Toggle Switch */
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-left: 15px;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.switch-label {
+    background-color: #3498db;
+    border-radius: 30px;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.switch-ball {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+.switch-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: white;
+}
+
+.sun {
+    left: 8px;
+}
+
+.moon {
+    right: 8px;
+}
+
+/* Move ball when checked */
+#darkModeCheckbox:checked + .switch-label .switch-ball {
+    transform: translateX(30px);
+}
+
+/* Change background when checked */
+#darkModeCheckbox:checked + .switch-label {
+    background-color: #8e44ad;
+}
+
+/* Main Content */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+    text-align: center;
+    padding: 60px 30px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Alternate Backgrounds */
+section:nth-of-type(odd) {
+    background-color: #f0f2f5;
+}
+
+
+section h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Subsection Titles (h3) */
+section h3 {
+    font-size: 1.4rem;
+    color: #8e44ad;
+    margin: 30px 0 10px;
+    text-align: left;
+    position: relative;
+}
+
+/* Improve Section Content */
+section p, section ul, section li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Profile Picture */
 .profile-pic {
     width: 150px;
+    height: 150px;
+    object-fit: cover;
     border-radius: 50%;
-    margin: 20px 0;
+    margin: 20px auto;
+    display: block;
+    border: 4px solid #3498db;
+    transition: transform 0.3s ease;
 }
 
-main {
-    padding: 20px;
+.profile-pic:hover {
+    transform: scale(1.05) rotate(1deg);
 }
-
-section {
-    margin-bottom: 40px;
+.dance-rect {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;  /* optional: small rounded corners */
+    display: block;
+    margin: 20px auto;
+    border: 4px solid #3498db;
+    transition: transform 0.3s ease;
+  }
+  
+  .dance-rect:hover {
+    transform: scale(1.05) rotate(1deg);
 }
-
-ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-footer {
-    margin-top: 30px;
-    text-align: center;
-    font-size: 0.9em;
-}
-
+/* Download Resume Button */
 .download-btn {
     display: inline-block;
-    padding: 10px 15px;
-    background: #4CAF50;
+    margin-top: 15px;
+    background-color: #3498db;
     color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.download-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Social Links */
+.social-links a {
+    margin: 0 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    color: #f39c12;
+}
+
+/* Form Styling */
+
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  form label {
+    font-weight: bold;
+  }
+  
+  form input, form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  form button[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+  
+  .cancel-btn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #95a5a6;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    display: none;
+  }
+  
+  input.invalid,
+  textarea.invalid {
+    border-color: red;
+  }
+  
+
 
 /* Dark Mode */
 .dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: #1e272e;
+    color: #dcdde1;
 }
 
 .dark-mode header {
-    background-color: #333;
+    background-color: #0f172a;
 }
 
 .dark-mode nav a {
-    color: #ddd;
+    color: #dcdde1;
+}
+
+.dark-mode nav a:hover {
+    color: #f39c12;
+}
+
+.dark-mode main {
+    background-color: #2f3640;
+    color: #dcdde1;
+}
+/* Dark Mode - Section Backgrounds */
+.dark-mode section {
+    background-color: #2f3542; /* Soft dark background */
+    color: #f1f2f6; /* Light text */
+}
+
+/* Dark Mode - Alternate Section Backgrounds */
+.dark-mode section:nth-of-type(odd) {
+    background-color: #3d3d3d; /* Slightly lighter dark */
+}
+
+/* Dark Mode - Headings inside Sections */
+.dark-mode section h2,
+.dark-mode section h3 {
+    color: #70a1ff; /* Light blue headings */
+    border-bottom-color: #70a1ff;
+}
+
+/* Dark Mode - Paragraphs and Lists */
+.dark-mode section p,
+.dark-mode section ul,
+.dark-mode section li {
+    color: #f1f2f6;
+}
+
+.dark-mode footer {
+    color: #aaa;
 }
 
 .dark-mode .download-btn {
-    background: #666;
+    background-color: #9b59b6;
 }
+
+.dark-mode .download-btn:hover {
+    background-color: #8e44ad;
+}
+
+.dark-mode form button[type="submit"] {
+    background-color: #9b59b6;
+}
+
+.dark-mode form button[type="submit"]:hover {
+    background-color: #8e44ad;
+}
+
+
+
+
+/* BUTTON HOVER + ACTIVE EFFECT */
+.download-btn,
+form button[type="submit"],
+#darkModeCheckbox {
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.download-btn:hover,
+form button[type="submit"]:hover,
+#darkModeCheckbox:hover {
+    background-color: #1abc9c;
+    transform: scale(1.05);
+}
+
+.download-btn:active,
+form button[type="submit"]:active,
+#darkModeCheckbox:active {
+    transform: scale(0.97);
+}
+
+/* Dark Mode – Contact Form Container */
+.dark-mode form {
+    background-color: #2f3542;
+    color: #f1f2f6;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Dark Mode – Inputs and Textarea */
+  .dark-mode form input,
+  .dark-mode form textarea {
+    background-color: #3b3b3b;
+    color: #f1f2f6;
+    border: 1px solid #666;
+  }
+  
+  /* Dark Mode – Inputs Focused */
+  .dark-mode form input:focus,
+  .dark-mode form textarea:focus {
+    border-color: #70a1ff;
+    box-shadow: 0 0 5px rgba(112, 161, 255, 0.5);
+  }
+  
+  /* Dark Mode – Submit Button */
+  .dark-mode form button[type="submit"] {
+    background-color: #9b59b6;
+    color: white;
+  }
+  
+  .dark-mode form button[type="submit"]:hover {
+    background-color: #8e44ad;
+  }
+  
+  /* Dark Mode – Cancel Button */
+  .dark-mode .cancel-btn {
+    background-color: #7f8c8d;
+    color: white;
+  }
+  
+  .dark-mode .cancel-btn:hover {
+    background-color: #95a5a6;
+  }
+  
+  /* Dark Mode – Error Text */
+  .dark-mode .error-message {
+    color: #ff6b6b;
+  }
+  
+  .dark-mode .dropdown-content {
+    background-color: #2f3542;
+    color: #f1f2f6;
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.05);
+  }
+  
+  .dark-mode .dropdown-content a {
+    color: #f1f2f6;
+  }
+  
+  .dark-mode .dropdown-content a:hover {
+    background-color: #3b3b3b;
+    color: #f39c12;
+  }
+  .dark-mode .dropbtn {
+    color: #f1f2f6;
+  }
+    
+
+/* FORM FIELDS: HOVER + FOCUS */
+form input:hover,
+form textarea:hover,
+form input:focus,
+form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+}
+
+/* Dance Page Grid Layout */
+.video-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.video-section iframe,
+.video-section img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.video-section p {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* Mobile-friendly */
+@media (max-width: 768px) {
+    .video-section {
+        grid-template-columns: 1fr;
+    }
+
+    .video-section p {
+        grid-column: 1;
+    }
+}
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .gallery-thumb {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery-thumb:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .project-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+/* Dark Mode Style */
+.dark-mode .project-card {
+    background-color: #2f3542;
+    border-color: #555;
+}
+
+.cert-list {
+    list-style: none;
+    padding-left: 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cert-list li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .dark-mode .cert-list li {
+    background-color: #3c3c3c;
+    color: #eee;
+  }
+  
+  .cert-list i {
+    color: #3498db;
+  }
+
+/* Center Scroll Adjustment */
+html {
+    scroll-padding-top: 100px;
+}
+
+

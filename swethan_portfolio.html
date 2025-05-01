@@ -6,32 +6,51 @@
     <title>Swetha Nair Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 <body>
     <header>
         <h1>Swetha Nair Portfolio</h1>
         <nav>
-            <a href="#profile">Profile</a> &nbsp;
-            <a href="#skills">Skills</a> &nbsp;
-            <a href="#courses">Relevant Coursework</a> &nbsp;
+            <div class="dropdown">
+                <a href="#profile" class="dropbtn">Profile<i class="fa-solid fa-caret-down"></i></a> &nbsp;
+                <div class="dropdown-content">
+                    <a href="#profile">Profile</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#courses">Relevant Coursework</a>
+                    <a href="#hobbies">Hobbies & Interests</a>
+                </div>
+            </div>
+            
             <a href="workexp.html">Work Experience</a> &nbsp;
             <a href="projects.html">Projects/Certifications</a> &nbsp;
             <a href="dance.html">Dance</a> &nbsp;
             <a href="contact.html">Contact Me!</a> 
-            <button id="darkModeToggle">Dark Mode</button>
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkModeCheckbox">
+                <label for="darkModeCheckbox" class="switch-label">
+                    <span class="switch-icon sun">☀️</span>
+                    <span class="switch-icon moon">🌙</span>
+                    <span class="switch-ball"></span>
+                </label>
+            </div>
+            
         </nav>
     </header>
     <main>
         <section id="profile">
         <h1>Swetha Nair</h1>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+        <img src="IMG_FEB430DB9006-1.jpeg" alt="Profile Picture" class="profile-pic">
         <h2>Contact Information</h2>
-        <p>Email: swethanair@gmail.com</p>
+        <p>Email: <a href="mailto:swethanair@gmail.com">swethanair@gmail.com</a></p>
         <p>Phone #: (408) 768-6835</p>
         <h3>Education Background</h3>
-        <p>BA in Business Administration | Management Information Systems Concentration and Minor in Dance from San Jose State University&nbsp; <strong>Class of 2025</strong></p>
+        <p>BA in Business Administration | Management Information Systems Concentration and Minor in Dance from San Jose State University&nbsp; <b>Class of 2025</b></p>
         <p>President's List, Dean's List</p>
-        <a href="resume.pdf" download class="download-btn">Download Resume</a>
+        <a href="Resume First Draft.pdf" download class="download-btn">Download Resume</a>
         </section> 
         <section id="skills">
             <h2>Skills</h2>
@@ -61,13 +80,18 @@
                 <li>Computer Tools for Business</li>
         </ul>
         </section>
+        <section id="hobbies">
+            <h2>Hobbies & Interests</h2>
+            <p>Cooking, Traveling, Languages, Dance, Art, Singing, Cats, Reading, Pilates, Yoga, Candle-Making</p>
+        </section>
         <footer>
             <p>Contact: <a href="mailto:swethanair@gmail.com">swethanair@gmail.com</a> | Phone: (408) 768-6835</p>
             <div class="social-links">
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a> |
-                <a href="snap youtube" target="_blank">SNAP YouTube</a>
-                <a href="propoint" target="_blank">PRO Point MIS Portfolio</a>
+                <a href="https://www.linkedin.com/in/swetha-nair-081199293" target="_blank">LinkedIn</a> |
+                <a href="https://www.youtube.com/@SNAPChoreography" target="_blank">SNAP YouTube</a> |
+                <a href="https://community.cob.sjsu.edu/snair/" target="_blank">PRO Point MIS Portfolio</a>
             </div>
+            <p>© 2025 Swetha Nair</p>
         </footer>
     </main>
 
